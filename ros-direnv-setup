@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+mkdir -p .buildenv
+
+if ! [[ -f ./.buildenv/.envrc ]]; then
+    cat > ./.buildenv/.envrc <<EOF
+# source source /opt/ros/rolling/setup.bash
+EOF
+fi
+
+if ! [[ -f .envrc ]]; then
+    cat > ./.buildenv/.envrc <<EOF
+layout ros
+EOF
+fi
+
+
+this_script="${BASH_SOURCE[0]}"
+files_dir=${this_script%/*}
+
+cp "${files_dir}/ros-build-wrapper"  ./.buildenv
+ln -sf ros-build-wrapper ./.buildenv/colcon
+
+ln -sf "${files_dir}/direnv-lib.sh" "${XDG_CONFIG_HOME:-$HOME/.config}"/direnv/lib/ros.sh
+
+cat <<EOF
+ros-direnv-setup was successful
+
+Now edit .buildenv/.envrc and optionally .envrc and run:
+
+    direnv allow .buildenv
+    direnv allow .
+EOF

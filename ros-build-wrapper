@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# This file is used by ros-direnv. See
+# https://github.com/wentasah/ros-direnv for more details.
+
+# Remove $ROS_BUILDENV_DIR from PATH to not call ourself recursively.
+PATH=:$PATH:
+PATH=${PATH//:$ROS_BUILDENV_DIR:/:}
+PATH=${PATH#:}
+PATH=${PATH%:}
+
+# Figure out if we were called via a symlink
+cmd=${0##*/}
+if [[ $cmd = ros-build-wrapper ]]; then
+    # No symlink, use $1 as command
+    cmd=$1
+    shift
+fi
+
+if [[ $ROS_BUILDENV_DIR ]] && [[ -f $ROS_BUILDENV_DIR/.envrc ]]; then
+    # Run the command in the build environment (typically just a ROS underlay)
+    set -x
+    exec direnv exec "$ROS_BUILDENV_DIR" "$cmd" "$@"
+else
+    # Run the command in the current environment
+    exec "$cmd" "$@"
+fi
