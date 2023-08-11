@@ -53,9 +53,10 @@ a single workspace:
   This requires sourcing the `local_setup.bash` on top of the underlay
   setup.
 
-This is described in more detail in a [ROS tutorial][].
+This is described in more detail in this [ROS tutorial][].
 
-Manually switching between the two environments is error prone.
+The problem is that manually switching between the two environments is
+error prone.
 
 ## Solution
 
@@ -70,8 +71,8 @@ both underlay and overlay environments, but build commands such as
 `install/local_setup.bash` (if it exists). Further, it prepends
 `.buildenv` to your PATH. The `.buildenv` directory contains wrappers
 for commands that need to be run in the build environment. By default
-only `colcon` wrapper is there, but you're free to add other wrappers.
-The wrapper runs the wrapped command via `direnv exec` with the
+only `colcon` wrapper is there, but you're free to wrap other commands.
+The wrapper runs the original command via `direnv exec` with the
 environment from `.buildenv/.envrc`.
 
 [direnv]: https://direnv.net/
