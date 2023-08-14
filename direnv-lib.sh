@@ -5,10 +5,10 @@ layout_ros() {
     source_env ./.buildenv/
 
     # Source local_setup if it exists
+    watch_file install/local_setup.bash
     if [[ -f ./install/local_setup.bash ]]; then
         log_status "ros-direnv: sourcing install/local_setup.bash"
         source install/local_setup.bash
-        watch_file install/local_setup.bash
     fi
 
     # Override build tools such as colcon to use the environment
