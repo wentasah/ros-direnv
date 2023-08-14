@@ -11,7 +11,7 @@ EOF
 fi
 
 if ! [[ -f .envrc ]]; then
-    cat > ./.buildenv/.envrc <<EOF
+    cat > ./.envrc <<EOF
 layout ros
 EOF
 fi
