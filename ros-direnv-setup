@@ -23,6 +23,7 @@ files_dir=${this_script%/*}
 cp "${files_dir}/ros-build-wrapper"  ./.buildenv
 ln -sf ros-build-wrapper ./.buildenv/colcon
 
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"/direnv/lib
 ln -sf "${files_dir}/direnv-lib.sh" "${XDG_CONFIG_HOME:-$HOME/.config}"/direnv/lib/ros.sh
 
 cat <<EOF
