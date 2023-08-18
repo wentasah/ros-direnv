@@ -12,7 +12,7 @@ fi
 
 if ! [[ -f .envrc ]]; then
     cat > ./.envrc <<EOF
-layout ros
+layout ros .buildenv
 EOF
 fi
 

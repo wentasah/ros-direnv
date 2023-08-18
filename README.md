@@ -21,7 +21,7 @@ upper directory.
    - Installs a [direnv library](./direnv-lib.sh) to
      `~/.config/direnv/lib/ros.sh`.
    - Creates `.envrc` file (if it doesn't exist) containing `layout
-     ros`. Support for this layout is in our direnv library.
+     ros .buildenv`. Support for this layout is in our direnv library.
    - Creates `.buildenv` directory with another `.envrc` file and a
      `colcon` wrapper.
 
