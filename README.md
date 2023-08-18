@@ -21,7 +21,8 @@ upper directory.
    - Installs a [direnv library](./direnv-lib.sh) to
      `~/.config/direnv/lib/ros.sh`.
    - Creates `.envrc` file (if it doesn't exist) containing `layout
-     ros .buildenv`. Support for this layout is in our direnv library.
+     ros .buildenv`. Support for this layout is contained in our
+     direnv library.
    - Creates `.buildenv` directory with another `.envrc` file and a
      `colcon` wrapper.
 
@@ -53,7 +54,8 @@ a single workspace:
   This requires sourcing the `local_setup.bash` on top of the underlay
   setup.
 
-This is described in more detail in this [ROS tutorial][].
+This is described in more detail in this [ROS tutorial][] and [colcon
+documentation][].
 
 The problem is that manually switching between the two environments is
 error prone.
@@ -78,3 +80,4 @@ environment from `.buildenv/.envrc`.
 [direnv]: https://direnv.net/
 [ROS]: https://www.ros.org/
 [ROS tutorial]: https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#source-the-overlay
+[colcon documentation]: https://colcon.readthedocs.io/en/released/user/what-is-a-workspace.html#install-artifacts
