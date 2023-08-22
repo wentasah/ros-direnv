@@ -2,10 +2,11 @@
 
 Manage [ROS][] workspace environment via [direnv][].
 
-Do you always forget to source `install/local_setup.bash`? This
-project does it for you. It relies on [direnv][], which automatically
-sets the environment based on the `.envrc` file in the current or
-upper directory.
+Do you always forget to source `install/local_setup.bash`? Do you hate
+switching to another terminal for running `colcon`? This project does
+it for you. It relies on [direnv][], which automatically sets the
+environment based on the `.envrc` file in the current or upper
+directory.
 
 ## Getting started
 
