@@ -6,7 +6,7 @@ mkdir -p .buildenv
 
 if ! [[ -f ./.buildenv/.envrc ]]; then
     cat > ./.buildenv/.envrc <<EOF
-# source source /opt/ros/rolling/setup.bash
+# source /opt/ros/rolling/setup.bash
 EOF
 fi
 
