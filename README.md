@@ -11,7 +11,8 @@ directory.
 ## Getting started
 
 1. [Install direnv][] and [hook it into your shell][].
-2. Clone/download this project to, say `~/ros-direnv`.
+2. Clone/download this project to, say `~/ros-direnv` (or install it
+   as shown below).
 3. Go to your ROS 2 workspace and setup ros-direnv there:
 
        cd my-ros-workspace
@@ -40,6 +41,25 @@ directory.
 
 [Install direnv]: https://direnv.net/docs/installation.html
 [hook it into your shell]: https://direnv.net/docs/hook.html
+
+### Installation
+
+Instead of heaving `ros-direnv` in some random directory, you can
+install it to `/usr/local` by running:
+
+    make install
+
+If you prefer another location, specify it with the `PREFIX` variable,
+e.g.:
+
+    make install PREFIX=$HOME
+
+You can also install `ros-direnv` as Nix flake:
+
+    nix profile install github:wentasah/ros-direnv
+
+After installation, `ros-direnv-setup` command should be available in
+your `PATH`.
 
 ## Problem to be solved
 
