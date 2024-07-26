@@ -56,7 +56,7 @@ e.g.:
 
 You can also install `ros-direnv` as Nix flake:
 
-    nix profile install github:wentasah/ros-direnv
+    nix profile install github:wentasah/ros-direnv --no-write-lock-file
 
 After installation, `ros-direnv-setup` command should be available in
 your `PATH`.
