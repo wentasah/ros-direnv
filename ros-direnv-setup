@@ -19,8 +19,8 @@ else
 fi
 
 
-this_script="${BASH_SOURCE[0]}"
-files_dir=$(realpath "${this_script%/*}")
+this_script=$(realpath "${BASH_SOURCE[0]}")
+files_dir="${this_script%/*}"
 
 cp "${files_dir}/ros-build-wrapper"  ./.buildenv
 ln -sf ros-build-wrapper ./.buildenv/colcon
