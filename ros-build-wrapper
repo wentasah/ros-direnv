@@ -19,7 +19,11 @@ fi
 
 if [[ $ROS_BUILDENV_DIR ]] && [[ -f $ROS_BUILDENV_DIR/.envrc ]]; then
     # Run the command in the build environment (typically just a ROS underlay)
-    set -x
+    if [[ $_ARGCOMPLETE ]]; then
+        export DIRENV_LOG_FORMAT=''
+    else
+        export DIRENV_LOG_FORMAT='ros-build-wrapper: %s'
+    fi
     exec direnv exec "$ROS_BUILDENV_DIR" "$cmd" "$@"
 else
     # Run the command in the current environment
