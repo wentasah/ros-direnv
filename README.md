@@ -20,13 +20,13 @@ directory.
 
    This does the following:
 
-   - Installs a [direnv library](./direnv-lib.sh) to
+   - Installs the [direnv library](./direnv-lib.sh) to
      `~/.config/direnv/lib/ros.sh`.
    - Creates `.envrc` file (if it doesn't exist) containing `layout
      ros .buildenv`. Support for this layout is contained in our
      direnv library.
-   - Creates `.buildenv` directory with another `.envrc` file and a
-     `colcon` wrapper.
+   - Creates the `.buildenv` directory with another `.envrc` file and
+     a `colcon` wrapper.
 
 4. Configure your build environment in `./.buildenv/.envrc`. Typically
    sourcing the underlay is sufficient:
@@ -61,7 +61,7 @@ You can also install `ros-direnv` as Nix flake:
 After installation, `ros-direnv-setup` command should be available in
 your `PATH`.
 
-## Problem to be solved
+## Problem we are solving
 
 [direnv][] works well for most types of projects, but not for ROS. The
 reason is that with ROS you need to use two different environments in
