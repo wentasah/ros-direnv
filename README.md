@@ -69,7 +69,7 @@ a single workspace:
 
 - Environment for building the workspace. This is usually set by
   sourcing a setup file from a ROS underlay, e.g., `source
-  /opt/ros/humble/setup.bash`.
+  /opt/ros/jazzy/setup.bash`.
 
 - Environment for using the packages from the workspace (overlay).
   This requires sourcing the `local_setup.bash` on top of the underlay
@@ -100,5 +100,5 @@ environment from `.buildenv/.envrc`.
 
 [direnv]: https://direnv.net/
 [ROS]: https://www.ros.org/
-[ROS tutorial]: https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#source-the-overlay
+[ROS tutorial]: https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace.html#source-the-overlay
 [colcon documentation]: https://colcon.readthedocs.io/en/released/user/what-is-a-workspace.html#install-artifacts
