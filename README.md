@@ -63,11 +63,11 @@ your `PATH`.
 
 ## Problem we are solving
 
-[direnv][] works well for most types of projects, but not for ROS. The
-reason is that with ROS you need to use two different environments in
-a single workspace:
+Using [direnv][] with most types of projects is easy, but not with
+ROS. The reason is that with ROS you need to use two different
+environments in a single workspace:
 
-- Environment for building the workspace. This is usually set by
+- Environment for building the workspace. This is usually set up by
   sourcing a setup file from a ROS underlay, e.g., `source
   /opt/ros/jazzy/setup.bash`.
 
