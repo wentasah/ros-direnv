@@ -38,6 +38,24 @@ directory.
        direnv allow .buildenv
        direnv allow .
 
+Then, whenever you change the working directory to your workspace, ROS
+environment is automatically sourced:
+
+```console
+$ cd my-ros-workspace
+direnv: loading ~/my-ros-workspace/.envrc
+direnv: loading ~/my-ros-workspace/.buildenv/.envrc
+direnv: ros-direnv: sourcing install/local_setup.bash
+```
+
+When you run `colcon`, it is run only in the `.buildenv` environment,
+without `install/local_setup.bash`:
+
+```console
+$ colcon build
+ros-build-wrapper: loading ~/my-ros-workspace/.buildenv/.envrc
+Summary: 0 packages finished [0.07s]
+```
 
 [Install direnv]: https://direnv.net/docs/installation.html
 [hook it into your shell]: https://direnv.net/docs/hook.html
